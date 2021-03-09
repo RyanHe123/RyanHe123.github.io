@@ -1,9 +1,10 @@
 # Header
 
 menu:
-  home: /
-  tags: /tags
-  categories: /categories
+  主页: /
+  分类: /categories
+  标签: /tags
+
 
 # SubNav
 subnav:
