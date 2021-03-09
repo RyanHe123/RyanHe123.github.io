@@ -9,13 +9,42 @@
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
+      <% if (page.type === "tags") { %>
+        <div class="tag-cloud">
+         <div class="tag-cloud-title">
+         </div>
+        
+         <div class="tag-cloud-tags">
+         <%- tagcloud({
+         min_font: 20,
+         max_font: 60,
+         amount: 200,
+         color: true,
+         start_color: '#381321',
+         end_color: '#111'
+         }) %>
+         <br>
+         </div>
+        </div>
+        
+        <% } else if (page.type === 'categories') { %>
+        
+        <div class="category-all-page">
+         <div class="category-all-title">
+         </div>
+         
+         <div class="category-all">
+         <%- list_categories() %>
+         </div>
+         
+        </div>
+        
+        <% } else { %>
+        
+         <% if (post.excerpt && index){ %> <%- post.excerpt %>
+         <% } else { %>
+         <%- post.content %>
+         <% } %>
       <% } %>
 
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
@@ -130,22 +159,4 @@
     }) %>
   <% } %>
 <% } %>
-
-  <div class="article-inner">
-    <% if (post.link || post.title){ %>
-      <header class="article-header">
-        <%- partial('post/title', {class_name: 'article-title'}) %>
-        <% if (!post.noDate){ %>
-        <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        <% if(theme.word_count && !post.no_word_count){%>
-          <%- partial('post/word') %>
-          <% } %>
-        <!-- 添加完成 -->
-
-        <% } %>
-      </header>
-    <% } %>
-  </div>
     

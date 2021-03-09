@@ -2,7 +2,7 @@
 
 menu:
   home: /
-  随笔: /tags/随笔/
+  tags: /tags
   categories: /categories
 
 # SubNav
@@ -45,7 +45,7 @@ open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 0
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
@@ -55,7 +55,7 @@ weixin:
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
-toc: 1
+toc: 2
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
 toc_hide_index: true
 # 目录为空时的提示
@@ -73,7 +73,7 @@ favicon: /favicon.png
 avatar: /assets/avatar.jpeg
 
 #是否开启分享
-share_jia: true
+share_jia: false
 
 #评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
 #不需要使用某项，直接设置值为false，或注释掉
@@ -118,7 +118,7 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-  friends: '友链'
+  friends: false
   aboutme: '关于我'
 
 friends:
@@ -129,7 +129,7 @@ friends:
   友情链接5: http://localhost:4000/
   友情链接6: http://localhost:4000/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 大三智能科学与技术专业学生<br>喜欢唱跳rap，不喜欢篮球(doge<br>欢迎大家交流学习<br>谢谢大家
 
 # 是否开启访问量统计功能(不蒜子)
 busuanzi:
